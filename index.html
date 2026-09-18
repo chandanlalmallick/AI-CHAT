@@ -8,35 +8,18 @@
 </head>
 <body>
 
-  <header class="app-header">
-    <h1>SimpleAI</h1>
-    <button id="clear-btn" title="Clear chat">Clear Chat</button>
-  </header>
+  <h1>SimpleAI</h1>
+  <div id="status">Loading AI...</div>
 
-  <div id="status-bar">Loading AI model...</div>
+  <div id="chat-box"></div>
 
-  <main id="chat-window" aria-live="polite">
-    <!-- messages get added here by script.js -->
-  </main>
-
-  <div id="loading-indicator" class="hidden">
-    <div class="spinner"></div>
-    <span id="loading-text">Loading AI model...</span>
+  <div id="input-area">
+    <input type="text" id="user-input" placeholder="Type a message..." disabled>
+    <button id="send-btn" disabled>Send</button>
   </div>
 
-  <form id="input-form">
-    <input
-      id="user-input"
-      type="text"
-      placeholder="Waiting for AI model to load..."
-      autocomplete="off"
-      disabled
-    />
-    <button id="send-btn" type="submit" disabled>Send</button>
-  </form>
+  <button id="clear-btn">Clear Chat</button>
 
-  <!-- WebLLM runs the AI model entirely in this browser tab.
-       It is loaded from a public CDN (jsdelivr) as an ES module, no build step needed. -->
   <script type="module" src="script.js"></script>
 </body>
 </html>
